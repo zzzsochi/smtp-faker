@@ -1,0 +1,18 @@
+/.vagrant
+/.cache
+
+__pycache__
+*.egg-info
+*.egg
+/build
+/dist
+
+.python-version
+.coverage
+
+*.DS_Store
+
+# sublime
+/*.sublime-settings
+/*.sublime-project
+/*.sublime-workspace

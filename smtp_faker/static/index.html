@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/yegor256/tacit/gh-pages/tacit-css-1.2.3.min.css"/>
+    <link rel="stylesheet" href="/static/styles.css"/>
+  </head>
+  <body>
+    <h1>SMTP Faker</h1>
+    <div id="app">
+      <div id="messages">
+        <table>
+          <thead>
+            <th>Timestamp</th>
+            <th>Subject</th>
+            <th>Size</th>
+          </thead>
+          <tbody>
+            <tr v-for="msg in messages" @click="activate(msg)"
+                :class="[msg === active.message ? 'row-active' : 'row']">
+              <td class="col-ts">{{ msg.ts }}</td>
+              <td class="col-subject" v-on:click="activate(msg)">{{ msg.headers.Subject }}</td>
+              <td class="col-size">{{ msg.size }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="message" v-if="active.message !== undefined">
+        <div>
+          <button v-on:click="showHeaders(active.message)">Headers</button>
+          <button v-on:click="showPlain(active.message)">Plain</button>
+          <button v-on:click="showHtml(active.message)">Html</button>
+          <button v-on:click="showRaw(active.message)">Raw</button>
+          <button disabled v-on:click="download(active.message)">Download</button>
+        </div>
+
+        <table v-if="active.state === 'headers'">
+          <thead>
+            <th>Key</th>
+            <th>Value</th>
+          </thead>
+          <tbody>
+            <tr v-for="(value, key) in active.message.headers">
+              <td>{{ key }}</td>
+              <td>{{ value }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <pre v-if="active.state === 'plain'">{{ active.plain }}</pre>
+
+        <div v-if="active.state === 'html'"><span v-html="active.html"></span></div>
+
+        <pre v-if="active.state === 'raw'">{{ active.raw }}</pre>
+
+      </div>
+    </div>
+    <script type="application/javascript" src="/static/app.js"></script>
+  </body>
+</html>

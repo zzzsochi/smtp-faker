@@ -1,0 +1,45 @@
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    min-width: 800px;
+}
+
+.row:hover {
+    background-color: #ddeedd;
+    cursor: pointer;
+}
+
+.row-active {
+    background-color: #ccddcc;
+}
+
+.row-active:hover {
+    background-color: #ccddcc;
+}
+
+.col-ts {
+    font-family: monospace;
+    white-space: nowrap;
+}
+
+.col-subject {
+    width: 100%;
+}
+
+.col-size {
+    font-family: monospace;
+    white-space: nowrap;
+    text-align: right;
+}
+
+#messages {
+    height: 290px;
+    overflow: auto;
+    /*width: 500px;*/
+}
+
+#message {
+    /*height: 290px;*/
+    /*overflow: auto;*/
+}
