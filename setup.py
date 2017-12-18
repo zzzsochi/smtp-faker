@@ -1,10 +1,16 @@
 from setuptools import setup, find_packages
 
 
+VERSION = '0.1.1'
+DESCRIPTION = 'SMTP Faker -- smtp server for development'
+LONG_DESCRIPTION = open('README.rst', 'rb').read().decode('utf8')
+
+
 setup(
     name='smtp_faker',
-    description='SMTP Faker -- smtp server for development',
-    version='0.1.0',
+    description=DESCRIPTION,
+    long_description=LONG_DESCRIPTION,
+    version=VERSION,
     classifiers=[
         "License :: OSI Approved :: BSD License",
         "Operating System :: POSIX",
