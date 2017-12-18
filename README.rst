@@ -19,7 +19,25 @@ Or Docker:
 
 .. code:: bash
 
-    $ docker run --rm -it -p 8080:80 -p 8025:25 zzzsochi/smtp-faker
+    $ docker run --rm -it -p 8080:80 -p 8025:25 --name smtp-faker zzzsochi/smtp-faker
+
+
+------------------
+Send test messages
+------------------
+
+.. code:: bash
+
+    $ python3 -m smtp_faker.test N
+    $ python3 -m smtp_faker.test HOST:PORT N
+
+.. code:: bash
+
+    $ python3 -m smtp_faker.test localhost:8025 10
+
+.. code:: bash
+
+    $ docker exec -it smtp-faker python3 -m smtp_faker.test 10
 
 
 ---

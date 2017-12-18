@@ -4,7 +4,7 @@ COPY . /srv/src
 RUN apk update && \
     apk add gcc libc-dev python3-dev && \
     pip3 install wheel && \
-    pip3 wheel --wheel-dir=/srv/wheels /srv/src
+    pip3 wheel --wheel-dir=/srv/wheels /srv/src Faker
 
 
 FROM alpine
@@ -17,6 +17,7 @@ COPY --from=0 /srv/wheels /srv/wheels
 RUN apk update && \
     apk add python3 &&\
     pip3 install wheel && \
+    pip3 install Faker && \
     pip3 install --no-index --find-links=/srv/wheels smtp_faker && \
     rm -rf /srv/wheels
 
