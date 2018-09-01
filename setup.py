@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 
-VERSION = '0.1.1'
+VERSION = '0.1.2'
 DESCRIPTION = 'SMTP Faker -- smtp server for development'
 LONG_DESCRIPTION = open('README.rst', 'rb').read().decode('utf8')
 
