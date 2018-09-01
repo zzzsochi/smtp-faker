@@ -66,8 +66,7 @@ def main():
 
     web.run_app(app,
                 host=args.http_hostport.host,
-                port=args.http_hostport.port,
-                loop=loop)
+                port=args.http_hostport.port)
 
 
 if __name__ == '__main__':
