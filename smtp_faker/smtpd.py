@@ -32,7 +32,10 @@ def configure(app, hostport, loop):
     app['smtp_server'] = server
     app.on_shutdown.append(lambda app: server.close())
 
-    print("======== Runing SMTP server on {}:{} ========".format(hostport.host, hostport.port))
+    print("======== Running SMTP server on {host}:{port} ========".format(
+        host=hostport.host,
+        port=hostport.port
+    ))
 
 
 class SMTPHandler:

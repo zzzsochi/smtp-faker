@@ -32,7 +32,7 @@ def _parse_hostport(value, default=None):
 
 
 def _args():
-    parser = argparse.ArgumentParser(description='Smpt faker.')
+    parser = argparse.ArgumentParser(description='SMTP faker.')
 
     parser.add_argument('--size', dest='size',
                         default=DEFAULT_SIZE,
