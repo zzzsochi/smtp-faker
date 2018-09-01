@@ -14,7 +14,7 @@ setup(
     classifiers=[
         "License :: OSI Approved :: BSD License",
         "Operating System :: POSIX",
-        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
         "Topic :: Internet :: WWW/HTTP",
     ],
     url='https://github.com/zzzsochi/smtp-faker/',
