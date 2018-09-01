@@ -20,7 +20,7 @@ setup(
     url='https://github.com/zzzsochi/smtp-faker/',
     keywords=['asyncio', 'aiohttp', 'email', 'smtp', 'smtpd'],
     packages=find_packages(),
-    install_requires=['aiohttp', 'aiosmtpd'],
+    install_requires=['aiohttp>=3', 'aiosmtpd'],
     package_data={
         'smtp_faker': ['static/index.html',
                        'static/styles.css',

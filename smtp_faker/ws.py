@@ -53,17 +53,17 @@ async def ws(request):
             try:
                 item = await asyncio.wait_for(queue.get(), 2)
             except asyncio.TimeoutError:
-                ws.ping()
+                await ws.ping()
                 continue
             except asyncio.CancelledError:
                 break
             else:
                 if item.action == 'received':
-                    ws.send_str(renderers.ws_action_received(item.message))
+                    await ws.send_str(renderers.ws_action_received(item.message))
                 elif item.action == 'removed':
-                    ws.send_str(renderers.ws_action_removed(item.message))
+                    await ws.send_str(renderers.ws_action_removed(item.message))
                 elif item.action == 'cleared':
-                    ws.send_str(renderers.ws_action_received())
+                    await ws.send_str(renderers.ws_action_received())
                 else:
                     pass
 
